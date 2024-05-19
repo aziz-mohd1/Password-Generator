@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Ninja | Aziz</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .slider::-webkit-slider-thumb{
+            position: relative;
+            appearance: none;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            background-color: #FFE53D;
+            box-shadow: 0 0 20px 0 rgba(225,229,61,0.9);
+            transition: all 100ms ease-in;
+        }
+
+        .slider::-webkit-slider-thumb:hover{
+            background-color: black;
+            outline: 1px solid #FFE53D;
+            box-shadow: 0 0 25px 5px rgba(225,229,61,0.9);
+        }
+
+        .slider::-moz-range-thumb {
+            position: relative;
+            appearance: none;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            background-color: #FFE53D;
+            box-shadow: 0 0 20px 0 rgba(225,229,61,0.9);
+            transition: all 100ms ease-in;
+        }
+
+        .slider::-moz-range-thumb:hover {
+            background-color: black;
+            outline: 1px solid #FFE53D;
+            box-shadow: 0 0 25px 5px rgba(225,229,61,0.9);
+        }
+
+        .slider:focus{
+            outline: 2px solid #FFE53D;
+        }
+
+        
+    </style>
+</head>
+<body class="bg-gradient-to-r from-black via-slate-400 to-black">
+    
+    <div id="wrapper" class="w-[100%] h-[100%] flex flex-col justify-center items-center overflow-x-hidden ">
+        <!-- heading -->
+        <div id="heading" class="w-[450px] h-[65px] rounded-sm text-[32px] font-[600] text-[#FCF6F6] scale-125  hover:scale-150 transition-all duration-500 ease-linear flex justify-center items-center font-ninja"><p>key<span class="text-red-600 pl-1">Ninja</span>. </p><span class="-skew-x-[18deg] pl-1">!</span></div>
+
+        <!-- generatedPassword section -->
+        <div class="w-[450px] h-[65px] border-b-[5px] border-[#58077D] rounded-xl my-2 flex justify-between p-4 bg-[rgb(22,6,40)] relative ">
+            <input readonly type="text" placeholder="PASSWORD" myPassword class="bg-inherit text-xl placeholder:text-[#AD9735] tracking-wider pl-2 font-bold w-[382px]  text-[#FFE53D] outline-none"> <!-- custom Arrtibute - myPassword-->
+            
+            <div class="h-6 w-6 ">
+                <div copyMsg class="absolute text-[#FFE53D] -top-6 -right-1 bg-[#871C9C] px-2 py-1 font font-semibold rounded-3xl hidden "></div> <!-- custom Arrtibute - copyMsg-->
+                <img src="./images/copy.svg" alt="copyIcon" class="cursor-pointer" copyIcon> <!-- custom Arrtibute - copyIcon-->
+            </div>
+        </div>
+
+        <!-- content section -->
+        
+        <div id="myContent" class="w-[450px] h-[450px]  rounded-xl my-4 p-8 bg-[#160628] border-b-[5px] border-[#58077D] relative ">
+            <div class="flex justify-between items-center">
+                    <div class="text-2xl text-[#ffffff]">Password Length</div>
+                    <div id="mylength" class=" text-[#FFE53D] text-[24px]  font-bold tracking-tight "></div>
+            </div>
+           
+                <!-- slider -->
+                
+            <input type="range" min="1" max="20" value="10"  id="myRange" class="slider appearance-none mt-7 mb-5 cursor-pointer w-[385px] bg-[#341C4F] rounded-lg h-3 
+                bg-gradient-to-r from-[#BD16F4] to-[#BD16F4] bg-no-repeat">
+        
+                <!-- checkBoxes -->
+            <div class="flex flex-col gap-2 ">
+                    <label for="Uppercase" class="relative text-white text-[20px] flex items-center "><input type="checkbox" name="Uppercase" class="outline-none cursor-pointer mr-3 w-5 h-5 appearance-none border-[1px] rounded-md border-cyan-400 checked:bg-cyan-400 checked:before:content-['✓'] checked:before:absolute checked:before:top-[2px] checked:before:text-[1.05rem] checked:before:font-[900] checked:before:left-1 checked:before:text-[#160628]" upperCase >Include Uppercase Letters</label>
+    
+                    <label for="Lowercase" class="relative text-white text-[20px] flex items-center "><input type="checkbox" name="Lowercase" class="outline-none cursor-pointer mr-3 w-5 h-5 appearance-none border-[1px] rounded-md border-cyan-400 checked:bg-cyan-400 checked:before:content-['✓'] checked:before:absolute checked:before:top-[2px] checked:before:text-[1.05rem] checked:before:font-[900] checked:before:left-1 checked:before:text-[#160628]"  lowerCase >Include Lowercase Letters</label>
+    
+                    <label for="Uppercase" class="relative text-white text-[20px] flex items-center "><input type="checkbox" name="Uppercase" class="outline-none cursor-pointer mr-3 w-5 h-5 appearance-none border-[1px] rounded-md border-cyan-400 checked:bg-cyan-400 checked:before:content-['✓'] checked:before:absolute checked:before:top-[2px] checked:before:text-[1.05rem] checked:before:font-[900] checked:before:left-1 checked:before:text-[#160628]"  numbers>Include Numbers</label>
+    
+                    <label for="Uppercase" class="relative text-white text-[20px] flex items-center "><input type="checkbox" name="Uppercase" class="outline-none cursor-pointer mr-3 w-5 h-5 appearance-none border-[1px] rounded-md border-cyan-400 checked:bg-cyan-400 checked:before:content-['✓'] checked:before:absolute checked:before:top-[2px] checked:before:text-[1.05rem] checked:before:font-[900] checked:before:left-1 checked:before:text-[#160628]"  symbols>
+                    Include Symbols</label>
+    
+            </div>
+    
+                <!-- strength section -->
+            <div class="mt-[20px] mb-[28px] flex justify-between">
+    
+                    <div class="text-[22px] text-white">Strength</div>
+    
+                    <div id="passwordStrength" class="h-6 w-6 bg-[#CCCCCC] rounded-full mt-2 shadow-[0_0_12px_1px_#CCCCCC]"></div>
+    
+            </div>
+    
+                <!-- button section -->
+    
+            <button button class="w-[380px] flex justify-center items-center h-[50px] py-[26px] text-[#FFE53D] font-[700] text-[18px] border-b-[5px] border-[#FFE53D] rounded-xl bg-[#BC15F4] font-sans tracking-widest outline-none">GENERATE PASSWORD</button>
+    
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
